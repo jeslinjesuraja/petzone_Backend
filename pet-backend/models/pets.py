@@ -13,7 +13,7 @@ class Pet(Base):
     vaccinated = Column(Boolean)
     description = Column(String)
     price = Column(Integer)
-    image = Column(JSON) # Changed from String to JSON to support multiple image URLs
+    image = Column(JSON) 
     owner_id = Column(Integer, ForeignKey("users.id"))
     owner = relationship("User", back_populates="pets")
     messages = relationship("Message", back_populates="pet")
